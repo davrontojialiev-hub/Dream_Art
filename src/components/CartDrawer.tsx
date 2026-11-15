@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 import { FiX, FiTrash2, FiCalendar, FiSend, FiShield } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { useCart } from './CartContext';
@@ -89,7 +89,7 @@ export const CartDrawer: FC = () => {
   return (
     <div className="cart-overlay" onClick={() => setIsCartOpen(false)}>
       <div className="cart-drawer" onClick={(e) => e.stopPropagation()}>
-        
+
         <div className="cart-header">
           <div>
             <h3>{t('cart.title', 'Оформление заказа')}</h3>
@@ -108,12 +108,12 @@ export const CartDrawer: FC = () => {
           ) : (
             cart.map((cartItem) => (
               <div key={cartItem.id} className="cart-item">
-                <img 
-                  src={cartItem.image || 'placeholder.jpg'} 
-                  alt={cartItem.name} 
-                  className="cart-item-image" 
+                <img
+                  src={cartItem.image || 'placeholder.jpg'}
+                  alt={cartItem.name}
+                  className="cart-item-image"
                 />
-                
+
                 <div className="cart-item-details">
                   <div className="cart-item-top">
                     <div className="cart-item-info">
@@ -131,7 +131,7 @@ export const CartDrawer: FC = () => {
                       <span>{cartItem.quantity}</span>
                       <button type="button" onClick={() => updateQuantity(cartItem.id, 1)}>+</button>
                     </div>
-                    
+
                     <span className="cart-item-sum">{(cartItem.price * cartItem.quantity).toLocaleString()} сум</span>
                   </div>
                 </div>
@@ -147,34 +147,34 @@ export const CartDrawer: FC = () => {
           <div className="cart-dates-row">
             <div className="cart-date-input-wrap">
               <span className="cart-date-label">{t('cart.from', 'с')}</span>
-              <input 
-                type="date" 
-                value={startDate} 
-                onChange={(e) => setStartDate(e.target.value)} 
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
               />
             </div>
             <div className="cart-date-input-wrap">
               <span className="cart-date-label">{t('cart.to', 'по')}</span>
-              <input 
-                type="date" 
-                value={endDate} 
-                onChange={(e) => setEndDate(e.target.value)} 
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
               />
             </div>
           </div>
 
-          <input 
-            type="text" 
-            placeholder={t('cart.namePlaceholder', 'Твоё имя')} 
-            value={clientName} 
+          <input
+            type="text"
+            placeholder={t('cart.namePlaceholder', 'Твоё имя')}
+            value={clientName}
             onChange={(e) => setClientName(e.target.value)}
             className="cart-input"
           />
 
-          <input 
-            type="tel" 
-            placeholder="+998 90 123 45 67" 
-            value={clientPhone} 
+          <input
+            type="tel"
+            placeholder="+998 90 123 45 67"
+            value={clientPhone}
             onChange={(e) => setClientPhone(e.target.value)}
             className="cart-input"
           />
@@ -190,10 +190,10 @@ export const CartDrawer: FC = () => {
               <span className="cart-total-price">{totalPrice.toLocaleString()} сум</span>
             </div>
 
-            <a 
-              href={telegramUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={telegramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="cart-submit-btn"
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
             >

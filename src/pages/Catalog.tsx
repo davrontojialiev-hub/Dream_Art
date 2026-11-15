@@ -214,7 +214,7 @@ export const equipmentData: EquipmentItem[] = [
 ];
 
 export const Catalog: FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t,  } = useTranslation();
   const { addToCart, setIsCartOpen } = useCart();
 
   const [searchParams] = useSearchParams();

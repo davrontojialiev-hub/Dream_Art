@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FiShoppingBag, FiCamera, FiMoon, FiSun } from 'react-icons/fi';
 import { useCart } from './CartContext';
-import i18n from "../i18n/i18n"; // Укажите правильный путь к вашему файлу i18n.ts (например, './i18n' или '../i18n')
 const Header: FC = () => {
   const location = useLocation();
   const { t, i18n } = useTranslation();
