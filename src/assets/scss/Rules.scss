@@ -1,0 +1,210 @@
+.rules-page {
+  width: 100%;
+  padding-top: 125px;
+  padding-bottom: 72px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+
+  &__container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Бейдж над заголовком */
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    cursor: default;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+
+    svg {
+      color: var(--accent-hover);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.45);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12);
+
+      svg {
+        transform: scale(1.15) rotate(-6deg);
+      }
+    }
+  }
+
+  /* Главный заголовок */
+  &__title {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+
+  /* Подзаголовок */
+  &__subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin: 0 0 36px 0;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  /* Сетка карточек */
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Карточка правила */
+  &__card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                background-color 0.25s ease;
+
+    &-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background-color: var(--accent-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  background-color 0.3s ease,
+                  box-shadow 0.3s ease;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    &-number {
+      color: var(--accent-hover);
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    &-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: rgba(37, 99, 235, 0.45);
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.14);
+
+      .rules-page__card-icon {
+        transform: scale(1.08) rotate(-4deg);
+        background-color: var(--accent-hover);
+        box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+      }
+
+      .rules-page__card-title {
+        color: var(--accent-hover);
+      }
+    }
+  }
+
+  &__banner {
+    width: 100%;
+    background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%);
+    border-radius: 24px;
+    padding: 36px 40px;
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &-icon {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        stroke: #ffffff;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+    }
+
+    &-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 0 0 10px 0;
+      max-width: 780px;
+      color: #ffffff;
+    }
+
+    &-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35);
+
+      .rules-page__banner-icon svg {
+        transform: scale(1.15) rotate(8deg);
+      }
+    }
+  }
+}

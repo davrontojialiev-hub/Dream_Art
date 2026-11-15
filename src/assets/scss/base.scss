@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Светлая тема (по умолчанию) */
+  --bg-page: #ffffff;
+  --bg-card: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-input: #f1f5f9;
+  --bg-badge: #eff6ff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --border-color: #e2e8f0;
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  --card-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+/* Тёмная тема (цвета 1-в-1 как в референсе из Bolt) */
+body.dark {
+  --bg-page: #0b1120;        /* Глубокий тёмно-синий фон страницы */
+  --bg-card: #111827;        /* Фон карточек */
+  --bg-secondary: #1e293b;   /* Второстепенные блоки, теги, кнопки категорий */
+  --bg-input: #161f33;       /* Поля поиска и инпуты */
+  --bg-badge: rgba(37, 99, 235, 0.15);
+
+  --text-primary: #f8fafc;   /* Белые заголовки */
+  --text-secondary: #94a3b8; /* Подзаголовки и описания */
+  --text-muted: #64748b;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-primary: #2563eb;
+  --accent-hover: #3b82f6;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+}
